@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transactions",
+  "info": {
+    "name": "Transactions"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "tickets": {
+      "collection": "ticket"
+    },
+    "qty": {
+      "type": "integer"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "transaction"
+    },
+    "number": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}

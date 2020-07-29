@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ticket_categories",
+  "info": {
+    "name": "Ticket_Categories"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "tickets": {
+      "collection": "ticket",
+      "via": "ticket_category"
+    },
+    "status": {
+      "type": "boolean"
+    }
+  }
+}
